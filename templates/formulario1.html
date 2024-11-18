@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Notas</title>
+</head>
+<body>
+    <h1>Formulario de Notas</h1>
+    <form method="post">
+        <label for="nota1">Nota 1:</label>
+        <input type="text" id="nota1" name="nota1"><br>
+        <label for="nota2">Nota 2:</label>
+        <input type="text" id="nota2" name="nota2"><br>
+        <label for="nota3">Nota 3:</label>
+        <input type="text" id="nota3" name="nota3"><br>
+        <label for="asistencia">Asistencia (%):</label>
+        <input type="text" id="asistencia" name="asistencia"><br>
+        <button type="submit">Enviar</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% if resultado is not none %}
+        <h2>Resultado</h2>
+        <p>Promedio: {{ promedio }}</p>
+        <p>{{ resultado }}</p>
+    {% endif %}
+</body>
+</html>

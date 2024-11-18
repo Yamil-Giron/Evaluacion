@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario 2</title>
+</head>
+<body>
+    <h1>Formulario 2</h1>
+    <form method="post">
+        <label for="nombre1">Nombre 1:</label>
+        <input type="text" id="nombre1" name="nombre1"><br>
+        <label for="nombre2">Nombre 2:</label>
+        <input type="text" id="nombre2" name="nombre2"><br>
+        <label for="nombre3">Nombre 3:</label>
+        <input type="text" id="nombre3" name="nombre3"><br>
+        <button type="submit">Enviar</button>
+    </form>
+    {% if nombre_mayor is not none %}
+        <h2>Resultado</h2>
+        <p>El nombre con mayor cantidad de caracteres es: {{ nombre_mayor }}</p>
+        <p>El nombre tiene: {{ longitud_mayor }} caracteres</p>
+    {% endif %}
+</body>
+</html>
