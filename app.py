@@ -7,7 +7,7 @@ app.secret_key = 'supersecretkey'
 def index():
     return render_template('index.html')
 
-@app.route('/formulario1', methods=['GET', 'POST'])
+@app.route('/formularionotas', methods=['GET', 'POST'])
 def formulario1():
     resultado = None
     promedio = None
@@ -35,9 +35,9 @@ def formulario1():
         except ValueError:
             flash('Por favor, ingrese valores numéricos válidos')
 
-    return render_template('formulario1.html', promedio=promedio, resultado=resultado)
+    return render_template('formularionotas.html', promedio=promedio, resultado=resultado)
 
-@app.route('/formulario2', methods=['GET', 'POST'])
+@app.route('/formularionombres', methods=['GET', 'POST'])
 def formulario2():
     nombre_mayor = None
     longitud_mayor = None
@@ -50,7 +50,7 @@ def formulario2():
         nombre_mayor = max(nombres, key=len)
         longitud_mayor = len(nombre_mayor)
 
-    return render_template('formulario2.html', nombre_mayor=nombre_mayor, longitud_mayor=longitud_mayor)
+    return render_template('formularionombres.html', nombre_mayor=nombre_mayor, longitud_mayor=longitud_mayor)
 
 if __name__ == '__main__':
     app.run(debug=True)
